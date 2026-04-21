@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImobiDemo — Imóveis de Alto Padrão</title>
+  <meta name="description" content="Os melhores imóveis de alto padrão. Casas, mansões e residências de luxo com as melhores localizações.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<!-- ============================================================ NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-icon">🏡</div>
+      <div class="nav-logo-text">Imobi<span>Demo</span></div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#featured">Destaques</a></li>
+      <li><a href="#allSection">Todos os Imóveis</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+    </ul>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================ HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-badge">✦ Alto Padrão &amp; Exclusividade</span>
+    <h1 class="hero-title">Encontre o Imóvel<br><em>dos seus Sonhos</em></h1>
+    <p class="hero-sub">Portfólio exclusivo de casas, mansões e residências de luxo nas melhores localizações. Seu próximo lar está aqui.</p>
+
+    <div class="hero-search">
+      <input type="text" id="heroSearch" placeholder="Busque por bairro, cidade ou tipo de imóvel…">
+      <button class="btn-search" id="heroBtnSearch">🔍 Buscar</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>4</strong><span>Imóveis</span></div>
+      <div class="hero-stat"><strong>100%</strong><span>Alto Padrão</span></div>
+      <div class="hero-stat"><strong>24h</strong><span>Atendimento</span></div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Explorar</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ============================================================ DESTAQUES -->
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">⭐ Selecionados para você</span>
+      <h2 class="section-title">Imóveis em Destaque</h2>
+      <p class="section-sub">Nossa curadoria especial das propriedades mais exclusivas disponíveis agora</p>
+    </div>
+
+    <div class="properties-grid" id="featuredGrid">
+      <!-- carregado via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SOBRE -->
+<section class="section section-alt" id="sobre">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">🏆 Por que nos escolher</span>
+      <h2 class="section-title">Experiência e Confiança</h2>
+      <p class="section-sub">Há anos conectando pessoas a imóveis excepcionais com segurança e transparência</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🤝</div>
+        <h3>Atendimento Personalizado</h3>
+        <p>Cada cliente recebe atenção exclusiva de um corretor especializado que vai entender exatamente o que você precisa.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📋</div>
+        <h3>Documentação Segura</h3>
+        <p>Cuidamos de toda a parte burocrática para que você foque apenas na alegria de ter o seu novo imóvel.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🔍</div>
+        <h3>Avaliação Precisa</h3>
+        <p>Nossos especialistas fazem a avaliação real do imóvel para garantir que você pague o justo e certo.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🏖</div>
+        <h3>Imóveis Exclusivos</h3>
+        <p>Portfólio de propriedades únicas e difíceis de encontrar no mercado, selecionadas por qualidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TODOS OS IMÓVEIS -->
+<section class="section" id="allSection">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">🏠 Portfólio completo</span>
+      <h2 class="section-title">Todos os Imóveis</h2>
+      <p class="section-sub">Use os filtros abaixo para encontrar o imóvel ideal para você</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filter-bar fade-up">
+      <div class="filter-group">
+        <label>Transação</label>
+        <select id="filterStatus">
+          <option value="">Venda &amp; Aluguel</option>
+          <option value="venda">Venda</option>
+          <option value="aluguel">Aluguel</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Tipo</label>
+        <select id="filterTipo">
+          <option value="">Todos os tipos</option>
+          <option value="casa">Casa</option>
+          <option value="apartamento">Apartamento</option>
+          <option value="terreno">Terreno</option>
+          <option value="comercial">Comercial</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Mín. Quartos</label>
+        <select id="filterQuartos">
+          <option value="">Qualquer</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Preço máximo (R$)</label>
+        <input type="number" id="filterPreco" placeholder="Ex: 5000000" step="100000">
+      </div>
+      <div class="filter-group">
+        <label>Busca livre</label>
+        <input type="text" id="filterBusca" placeholder="Bairro, cidade…">
+      </div>
+      <button class="btn-filter" id="btnFilter">🔍 Filtrar</button>
+      <button class="btn-reset"  id="btnReset">✕ Limpar</button>
+    </div>
+
+    <div class="properties-grid" id="allGrid">
+      <!-- carregado via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTATO -->
+<section class="contact-section" id="contato">
+  <div class="container">
+    <div class="contact-inner">
+
+      <div class="contact-info fade-up">
+        <span class="section-label">📞 Fale com um especialista</span>
+        <h2>Pronto para encontrar<br>seu novo lar?</h2>
+        <p>Deixe seus dados e um de nossos corretores especializados entrará em contato em até 24 horas para entender suas necessidades e apresentar as melhores opções.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>(16) 9 9999-9999</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <strong>E-mail</strong>
+              <span>contato@imobidemo.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕘</div>
+            <div>
+              <strong>Horário</strong>
+              <span>Seg–Sex, 08h às 18h</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <strong>Endereço</strong>
+              <span>Av. de Demonstração, 1000 — Cidade Demo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card fade-up">
+        <h3>Quero ser Contactado</h3>
+        <p>Preencha abaixo e um corretor retornará rapidamente.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome *</label>
+              <input type="text" name="nome" required placeholder="Seu nome completo">
+            </div>
+            <div class="form-group">
+              <label>Telefone *</label>
+              <input type="tel" name="telefone" required placeholder="(16) 9 9999-9999">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="seu@email.com">
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea name="mensagem" placeholder="Descreva o imóvel que você procura, orçamento, localização preferida…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">📩 Quero ser Contactado</button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <h4>Recebemos seu contato!</h4>
+          <p>Em breve um de nossos corretores especialistas entrará em contato com você. Até logo!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Imobi<span>Demo</span></div>
+      <nav class="footer-links">
+        <a href="#featured">Destaques</a>
+        <a href="#allSection">Imóveis</a>
+        <a href="#contato">Contato</a>
+        <a href="/corretor/login.html">Área do Corretor</a>
+      </nav>
+    </div>
+    <p class="footer-copy">© 2024 ImobiDemo · Site de demonstração · Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

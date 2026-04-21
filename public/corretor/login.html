@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Painel do Corretor · ImobiDemo</title>
+  <link rel="stylesheet" href="/assets/css/corretor.css">
+</head>
+<body>
+
+<div class="login-page">
+
+  <!-- Arte / Branding -->
+  <div class="login-art">
+    <div class="login-art-bg"></div>
+    <div class="login-art-content">
+      <h1>Imobi<span>Demo</span></h1>
+      <p>Painel exclusivo para corretores. Gerencie seu portfólio, acompanhe leads e cadastre novos imóveis.</p>
+    </div>
+    <div class="login-art-stats">
+      <div class="login-art-stat"><strong id="artStatImoveis">—</strong><span>Imóveis</span></div>
+      <div class="login-art-stat"><strong id="artStatLeads">—</strong><span>Leads</span></div>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="login-form-side">
+    <div class="login-box">
+
+      <div class="login-logo">
+        <div class="login-logo-icon">🏡</div>
+        <div class="login-logo-text">Imobi<span>Demo</span></div>
+      </div>
+
+      <h2>Acesso do Corretor</h2>
+      <p>Entre com suas credenciais para acessar o painel de gestão.</p>
+
+      <form id="loginForm" onsubmit="doLogin(event)" novalidate>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" name="email" required placeholder="admin@imobidemo.com" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" name="senha" required placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn-login">Entrar no Painel</button>
+        <div class="login-error" id="loginError"></div>
+      </form>
+
+      <div class="login-hint">
+        🔑 Demo: <strong>admin@imobidemo.com</strong> / <strong>demo1234</strong>
+      </div>
+
+      <p style="margin-top:24px;text-align:center;font-size:.82rem;color:#9ca3af">
+        <a href="/" style="color:#b8941f;font-weight:700">← Voltar ao site do cliente</a>
+      </p>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="/assets/js/corretor.js"></script>
+<script>
+  // Se já estiver logado, redireciona
+  fetch('/api/auth_check.php')
+    .then(r => r.json())
+    .then(d => { if (d.logado) window.location.href = '/corretor/'; })
+    .catch(() => {});
+
+  // Carregar stats para a arte
+  fetch('/api/dashboard.php?aba=stats')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('artStatImoveis').textContent = d.total_imoveis || '0';
+      document.getElementById('artStatLeads').textContent   = d.total_leads   || '0';
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
