@@ -66,7 +66,7 @@ Ubuntu Server 24.04 LTS
 | **Cloud** | Oracle Cloud Infrastructure (Always Free) |
 | **SO** | Ubuntu Server 24.04 LTS |
 | **Web Server** | Nginx 1.24 |
-| **Backend** | PHP 8.2-FPM |
+| **Backend** | PHP 8.3-FPM |
 | **Banco de Dados** | MySQL 8.0 |
 | **Domínio** | DuckDNS (DNS dinâmico gratuito) |
 | **SSL** | Let's Encrypt via Certbot |
