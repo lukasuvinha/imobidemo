@@ -132,7 +132,7 @@ imobidemo/
 
 ---
 
-## 🚀 Infrastructure & Deploy
+## 🚀 Infra & Deploy
 
 ### Por que Oracle Cloud?
 
