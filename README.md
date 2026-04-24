@@ -239,7 +239,7 @@ sudo chmod -R 775 /var/www/html/uploads/
 
 ```bash
 # Serviços ativos
-sudo systemctl status nginx php8.2-fpm mysql
+sudo systemctl status nginx php8.3-fpm mysql
 
 # API respondendo
 curl -k https://localhost/api/imoveis.php
